@@ -376,11 +376,13 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
-set -g @plugin 'odedlaz/tmux-onedark-theme'
-#
-# set -g @plugin 'wfxr/tmux-power'
-# set -g @tmux_power_theme 'violet'
 
+# -- dracula config ----------------------------------------------------------
+set -g @plugin 'dracula/tmux'  
+
+set -g @dracula-show-fahrenheit false
+set -g @dracula-show-left-icon 🐉
+set -g @dracula-show-network false
 
 # -- custom variables ----------------------------------------------------------
 # Change prefix key to CTRL+A. "C-" stands for CTRL, "M-" stands for ALT key
