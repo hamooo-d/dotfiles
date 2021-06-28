@@ -345,7 +345,7 @@ tmux_conf_copy_to_os_clipboard=false
 # bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position bottom
 
 # -- tpm -----------------------------------------------------------------------
 
@@ -373,16 +373,18 @@ tmux_conf_update_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
 
-# -- dracula config ----------------------------------------------------------
-set -g @plugin 'dracula/tmux'  
+set -g @plugin 'egel/tmux-gruvbox'
+set -g @tmux-gruvbox 'dark' # or 'light'
 
-set -g @dracula-show-fahrenheit false
-set -g @dracula-show-left-icon 🐉
-set -g @dracula-show-network false
+# -- dracula config ----------------------------------------------------------
+# set -g @plugin 'dracula/tmux' 
+# set -g @dracula-show-fahrenheit false
+# set -g @dracula-show-left-icon smiley
+# set -g @dracula-show-network false
 
 # -- custom variables ----------------------------------------------------------
 # Change prefix key to CTRL+A. "C-" stands for CTRL, "M-" stands for ALT key
@@ -415,5 +417,3 @@ set -g status-right "#(cut -d ' ' -f -3 /proc/loadavg) %H:%M %d-%b-%y"
 #   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
 # }
 #
-# "$@"
-# # /!\ do not remove the previous line
