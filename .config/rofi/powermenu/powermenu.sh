@@ -81,7 +81,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-			i3exit lock
+			/home/ahmed/.i3/i3lock-fancy-multimonitor/lock
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi

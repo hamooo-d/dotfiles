@@ -20,7 +20,7 @@ configuration {
 }
 
 * {
-    background:                     #161925F8;
+    background:                     #282828F8;
     background-alt:              	#00000000;
     background-bar:                 #f2f2f215;
     foreground:                     #f2f2f2EE;
