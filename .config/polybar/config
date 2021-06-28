@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #F8161925
+background = #DD282828
 foreground = #FFF
 ;  _                    
 ; | |__   __ _ _ __ ___ 
@@ -45,10 +45,10 @@ font-0=Caskaydia Cove Nerd Font:size=12;2
 font-2=Caskaydia Cove Nerd Font:size=12;2
 font-1=Caskaydia Cove Nerd Font:size=12;2
 
-modules-left = i3 xwindow 
-modules-right = updates spotify time power 
+modules-left = i3 
+modules-right = updates previous play next spotify lang time power 
 
-tray-position = center
+tray-position = right
 scroll-up = i3-wsnext
 scroll-down = i3-wsprev
 wm-restack = i3
@@ -70,7 +70,7 @@ format =   <label> update(s) available.
 format-margin = 8
 tail = true
 interval = 30
-click-left = alacritty -e yay -Syu
+click-left = kitty -e yay -Syu
 
 [module/xwindow]
 type = internal/xwindow
@@ -82,62 +82,39 @@ label-font = 2
 
 [module/i3]
 type = internal/i3
-pin-workspaces = false
+pin-workspaces = true
+inline-mode = true
 enable-click = true
 enable-scroll = true
-format-padding = 1
-index-sort = true
+reverse-scroll = false
+format = <label-state>
+ws-icon-0 = 1;%{F#4BB1A7}
+ws-icon-1 = 2;%{F#ff9b93}
+ws-icon-2 = 3;%{F#4BB1A7}
+ws-icon-3 = 4;%{F#81A1C1}ﭮ
+ws-icon-4 = 5;%{F#A3BE8C}阮
+ws-icon-5 = 6;%{F#4BB1A7}
+ws-icon-6 = 7;%{F#72C7D1}金
+ws-icon-default = %{F#B888E2}
 
-format = <label-state> <label-mode>
-
-label-mode = %mode%
-label-mode-padding = 2
-label-mode-background = #e60053
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-focused = %index%
+label-focused = %icon%  %index% 
 label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
+label-focused-background = #202020
 label-focused-underline = #dddddd
 label-focused-padding = 4
 
-label-unfocused = %index%
+label-unfocused = %icon%  %index% 
 label-unfocused-padding = 4
 
-label-visible = %index%
+label-visible = %icon%  %index% 
 label-visible-underline = #555555
 label-visible-padding = 4
 
-label-urgent = %index%
+label-urgent = %icon%  %index% 
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 4
 
-
-[module/wlan]
-type = internal/network
-interface = wlx0013eff2094e
-interval = 3.0
-
-format-connected =  <label-connected>
-label-connected = %essid%
-label-connected-color1 = ${colors.color1}
-
-format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
-label-disconnected-color1 = ${colors.color1}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-color1 = ${colors.color1}
 
 [module/time]
 type = internal/date
@@ -150,51 +127,47 @@ label = %time% | %date%
 label-background = ${colors.background}
 label-padding = 2
 
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume-margin = 4
-format-volume = <ramp-volume><label-volume>
-label-volume = %percentage:4:4%%
-format-volume-background = ${colors.background}
-format-volume-padding = 2
-use-ui-max = false
-interval = 5
-
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
-
-
-label-muted = " muted"   
-label-muted-background = ${colors.background}
-label-muted-padding = 2
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format =  <label>
-format-warn = <ramp> <label-warn>
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-color1 = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-
 [module/spotify]
 type = custom/script
 format-margin = 4
-format =    <label>
+format =   <label>
 exec = playerctl --player=spotify metadata --format '{{artist}}: {{title}}'
+click-left = "spotify"
 tail = true
 interval = 1
+
+[module/play]
+type = custom/text
+content = 
 click-left = "playerctl --player=spotify play-pause"
+content-background = #DD404040
+content-foreground = #ddd
+content-padding = 1
+
+[module/next]
+type = custom/text
+content = 
+click-left = "playerctl --player=spotify next"
+content-padding = 2
+content-background = #DD404040
+content-foreground = #ddd
+
+[module/previous]
+type = custom/text
+content = 
+click-left = "playerctl --player=spotify previous"
+content-padding = 2
+content-background = #DD404040
+content-foreground = #ddd
+
+
+[module/lang]
+type = custom/script
+format-margin = 0
+format =   <label>
+exec = xkblayout-state print "%s"
+tail = true
+interval = 1
 
 [module/power]
 type = custom/text
@@ -216,3 +189,4 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
