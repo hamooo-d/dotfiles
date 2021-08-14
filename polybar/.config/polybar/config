@@ -111,14 +111,14 @@ padding-right = 1
 module-margin-left = 3
 module-margin-right = 3
 
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome5Brands:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "Noto Sans Mono:size=8;0"
+font-0 = "CaskaydiaCove Nerd Font:size=10;0"
+font-1 = "CaskaydiaCove Nerd Font:size=10;0"
+font-2 = "CaskaydiaCove Nerd Font:size=10;0"
+font-3 = "CaskaydiaCove Nerd Font:size=10;0"
+font-4 = "CaskaydiaCove Nerd Font:size=8;0"
 
 modules-left = i3 
-modules-center = aur-updates
+modules-center = spotify2 spotify-prev spotify-play-pause spotify-next
 modules-right = xkeyboard cpu2 battery date
 
 separator = |
@@ -207,13 +207,13 @@ module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-0 = "CaskaydiaCove Nerd Font:size=10;0"
+font-1 = "CaskaydiaCove Nerd Font:size=10;0"
+font-2 = "CaskaydiaCove Nerd Font:size=10;0"
+font-3 = "CaskaydiaCove Nerd Font:size=10;0"
 
 modules-left = memory3 
-modules-center = networkspeeddown networkspeedup
+modules-center = aur-updates
 modules-right = filesystem
 
 separator = |
@@ -1159,13 +1159,13 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 ;       v     
 
-ws-icon-0 = 1;%{F#4BB1A7}
-ws-icon-1 = 2;%{F#ff9b93}
-ws-icon-2 = 3;%{F#4BB1A7}
-ws-icon-3 = 4;%{F#81A1C1}
+ws-icon-0 = 1;%{F#009930}
+ws-icon-1 = 2;%{F#D64135}
+ws-icon-2 = 3;%{F#4BB1A7}
+ws-icon-3 = 4;%{F#81A1C1}
 ws-icon-4 = 5;%{F#A3BE8C}
 ws-icon-5 = 6;%{F#4BB1A7}
-ws-icon-6 = 7;%{F#72C7D1}
+ws-icon-6 = 7;%{F#1DCE5E}
 ws-icon-9 = 10;
 ws-icon-default = " "
 
@@ -1826,7 +1826,7 @@ format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-underline = #FFBB00
 
-################################################################################
+################################################################################
 
 [module/pamac-manager]
 type = custom/script
@@ -1930,7 +1930,7 @@ exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 [module/spotify-prev]
 type = custom/script
-exec = echo ""
+exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1939,8 +1939,8 @@ click-right = spotify
 
 [module/spotify-play-pause]
 type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo ""
+hook-0 = echo ""
+hook-1 = echo ""
 initial = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1949,7 +1949,7 @@ click-right = spotify
 
 [module/spotify-next]
 type = custom/script
-exec = echo ""
+exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}

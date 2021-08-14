@@ -567,7 +567,7 @@ bindsym control+mod1+g exec --no-startup-id chromium;focus
 
 #workspace 2 related
 #bindsym $mod+F2 exec --no-startup-id geany;focus
-bindsym $mod+F2 exec --no-startup-id brave;focus
+bindsym $mod+F2 exec --no-startup-id firefox;focus
 
 #workspace 3 related
 bindsym $mod+F3 exec --no-startup-id inkscape;focus
@@ -685,7 +685,6 @@ for_window [class="Gnome-terminal"] focus
 for_window [class="Termite"] focus
 for_window [class="Terminator"] focus
 for_window [class="Urxvt"] focus
-
 
 
 
@@ -890,7 +889,7 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
   # class                 border  backgr. text    indicator
   client.placeholder      #242424 #242424 #242424
   client.background       #242424 #242424 #242424
-  client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+  client.focused          #A89984 #A89984 #e5e5e5 A89984
   client.unfocused        #222222 #222222 #aaaaaa #222222
   client.focused_inactive #222222 #222222 #a9a9a9 #222222
   client.urgent           #d42121 #d42121 #f7f7f7 #d42121
