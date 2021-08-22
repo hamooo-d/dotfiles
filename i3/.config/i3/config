@@ -69,8 +69,6 @@ set $right semicolon
 #exec --no-startup-id xrandr --output DVI-1 --right-of DVI-0 --auto
 #exec --no-startup-id xrandr --output DVI-D-1 --right-of DVI-I-1 --auto
 #exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
-exec --no-startup-id xrandr --output HDMI2 --right-of HDMI1 --auto
-exec --no-startup-id $HOME/.screenlayout/layout.sh
 
 
 # my current setup
@@ -367,12 +365,13 @@ font pango:Noto Mono Regular 13
 # you can find the class with the program xprop
 
 # Workspace 1 browser related
-#assign [class="Firefox|Vivaldi-stable|Vivaldi-snapshot|Opera"]                      → 1
 #assign [class="Chromium|Google-chrome"]                                             → 1
 
 # Workspace 2 text editor related
 #assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
 #assign [class="Xed|xed|Brackets|Atom|Code|Geany"]                                   → 2
+# for_window [class="firefox"] move to workspace 2
+assign [class="firefox"]                                                            → 2
 
 # Workspace 3 Inkscape
 #assign [class="Inkscape"]                                                           → 3
@@ -398,9 +397,9 @@ font pango:Noto Mono Regular 13
 #assign [class="Geary|Evolution"]                                                    → 9
 
 # Workspace 10 music related
-#assign [class="Spotify|spotify"]                                                    → 10
-#fix for spotify not moving to workspace 10
-#for_window [class="Spotify"] move to workspace 10
+# assign [class="Spotify|spotify"]                                                    → 7
+# fix for spotify not moving to workspace 10
+for_window [class="Spotify"] move to workspace 7
 
 
 
@@ -477,11 +476,16 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-fill /home/ahmed/wallpapers/wallpaper_1.jpg &
+exec --no-startup-id feh --bg-fill /home/ahmed/wallpapers/wallpaper_2.jpg &
 
 #Polybar
     
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#Screen layout
+exec_always --no-startup-id ~/.screenlayout/layout.sh
+exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl HDMI-A-0 1.5
+exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl DisplayPort-1 1.5
 
 #####################################################################################################################
 #################                                 system applications                               #################
@@ -956,7 +960,7 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 #exec --no-startup-id setxkbmap us
 
 exec_always --no-startup-id setxkbmap -layout us,ar -option grp:alt_shift_toggle
-
+exec_always --no-startup-id echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
 
 #####################################################################################################################
 #################                          unclutter                                                #################

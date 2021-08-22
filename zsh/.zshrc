@@ -79,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export EDITOR='nvim'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -102,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias luamake=/home/ahmed/lua-language-server/3rd/luamake/luamake
+alias emulator=$ANDROID_HOME/emulator/emulator

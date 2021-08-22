@@ -2,36 +2,34 @@ env:
   TERM: xterm-256color
 
 colors:
-  # Default colors
+  name: Ashes (dark)
+  author: Chris Kempson
   primary:
-    background: "#282828"
-    # background: "#2E3440"
-    foreground: "#D8DEE9"
-
-  # Normal colors
+    background: "#1c2023"
+    foreground: "#c7ccd1"
+  cursor:
+    text: "#1c2023"
+    cursor: "#c7ccd1"
   normal:
-    black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
-    
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#abb2bf"
-
-  # Bright colors
+    black: "#1c2023"
+    red: "#c7ae95"
+    green: "#95c7ae"
+    yellow: "#aec795"
+    blue: "#ae95c7"
+    magenta: "#c795ae"
+    cyan: "#95aec7"
+    white: "#c7ccd1"
   bright:
-    black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
-    yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#ECEFF4"
+    black: "#747c84"
+    red: "#c7ae95"
+    green: "#95c7ae"
+    yellow: "#aec795"
+    blue: "#ae95c7"
+    magenta: "#c795ae"
+    cyan: "#95aec7"
+    white: "#f3f4f5"
 
 background_opacity: 0.95
-
 
 font:
   # The normal (roman) font face to use.
@@ -48,7 +46,7 @@ font:
 
   # The italic font face
   italic:
-    family: CaskaydiaCove Nerd Font 
+    family: CaskaydiaCove Nerd Font
     # Style can be specified to pick a specific face.
     # style: Italic
   size: 14.0
@@ -71,13 +69,11 @@ window:
   #   # Number of lines the viewport will move for every line scrolled when
   #   # scrollback is enabled (history > 0).
   #   multiplier: 10
-
   dimensions:
     columns: 0
     lines: 0
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true
-
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }

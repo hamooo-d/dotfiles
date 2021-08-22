@@ -119,7 +119,7 @@ font-4 = "CaskaydiaCove Nerd Font:size=8;0"
 
 modules-left = i3 
 modules-center = spotify2 spotify-prev spotify-play-pause spotify-next
-modules-right = xkeyboard cpu2 battery date
+modules-right = xkeyboard cpu2 date
 
 separator = |
 
@@ -1164,7 +1164,7 @@ ws-icon-1 = 2;%{F#D64135}
 ws-icon-2 = 3;%{F#4BB1A7}
 ws-icon-3 = 4;%{F#81A1C1}
 ws-icon-4 = 5;%{F#A3BE8C}
-ws-icon-5 = 6;%{F#4BB1A7}
+ws-icon-5 = 6;%{F#5560E9}ﭮ
 ws-icon-6 = 7;%{F#1DCE5E}
 ws-icon-9 = 10;
 ws-icon-default = " "
@@ -1922,9 +1922,11 @@ label = %{T5} %output:0:150%
 type = custom/script
 tail = true
 format-prefix = "  "
+format-prefix-font = 1
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+format-prefix-foreground = #0f0
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 
@@ -1934,7 +1936,7 @@ exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-click-left = playerctl previous spotify
+click-left = playerctl --player=spotify previous
 click-right = spotify
 
 [module/spotify-play-pause]
@@ -1944,7 +1946,7 @@ hook-1 = echo ""
 initial = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-click-left = playerctl play-pause spotify
+click-left = playerctl --player=spotify play-pause 
 click-right = spotify
 
 [module/spotify-next]
@@ -1953,7 +1955,7 @@ exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-click-left = playerctl next spotify
+click-left = playerctl --player=spotify next 
 click-right = spotify
 
 ################################################################################
