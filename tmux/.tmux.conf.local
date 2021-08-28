@@ -384,11 +384,12 @@ tmux_conf_update_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'dracula/tmux'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-restore 'on'
-set -g @plugin 'dracula/tmux'
-set -g @dracula-plugins "cpu-usage"
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @continuum-restore 'off'
+
 
 # -- custom variables ----------------------------------------------------------
 
@@ -416,3 +417,4 @@ set -g @dracula-plugins "cpu-usage"
 #
 # "$@"
 # # /!\ do not remove the previous line
+

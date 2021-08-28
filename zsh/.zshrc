@@ -70,6 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+# 
 plugins=(nvm git zsh-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit
 
@@ -80,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='nvim'
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -105,3 +109,4 @@ export EDITOR='nvim'
 
 alias luamake=/home/ahmed/lua-language-server/3rd/luamake/luamake
 alias emulator=$ANDROID_HOME/emulator/emulator
+zmodload zsh/zprof

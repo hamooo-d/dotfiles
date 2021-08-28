@@ -20,10 +20,10 @@ configuration {
 }
 
 * {
-    background:                     #282828F8;
+    background:                     #1a1b26F8;
     background-alt:              	  #00000000;
-    background-bar:                 #f2f2f215;
-    foreground:                     #f2f2f2EE;
+    background-bar:                 #a9b1d615;
+    foreground:                     #a9b1d6EE;
     accent:			            	      #3DAEE966;
 }
 

@@ -476,7 +476,7 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-fill /home/ahmed/wallpapers/wallpaper_2.jpg &
+exec --no-startup-id feh --bg-scale ~/wallpapers/sword6.png &
 
 #Polybar
     
@@ -515,11 +515,11 @@ bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
 bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
 
 # terminal
-bindsym $mod+Return exec --no-startup-id kitty;focus
-bindsym $mod+KP_Enter exec --no-startup-id kitty;focus
-bindsym control+mod1+t exec --no-startup-id kitty; focus
-bindsym control+mod1+Return exec --no-startup-id kitty; focus
-bindsym control+mod1+KP_Enter exec --no-startup-id kitty; focus
+bindsym $mod+Return exec --no-startup-id alacritty;focus
+bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
+bindsym control+mod1+t exec --no-startup-id alacritty; focus
+bindsym control+mod1+Return exec --no-startup-id alacritty; focus
+bindsym control+mod1+KP_Enter exec --no-startup-id alacritty; focus
 bindsym F12 exec --no-startup-id xfce4-terminal --drop-down; focus
 
 #System monitor
@@ -892,7 +892,7 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
   # class                 border  backgr. text    indicator
   client.placeholder      #242424 #242424 #242424
-  client.background       #242424 #242424 #242424
+  client.background       #1a1b26 #1a1b26 #1a1b26
   client.focused          #A89984 #A89984 #e5e5e5 A89984
   client.unfocused        #222222 #222222 #aaaaaa #222222
   client.focused_inactive #222222 #222222 #a9a9a9 #222222
