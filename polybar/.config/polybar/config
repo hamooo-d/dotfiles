@@ -1160,7 +1160,7 @@ fuzzy-match = false
 ;       v     
 
 ws-icon-0 = 1;%{F#009930}
-ws-icon-1 = 2;%{F#D64135}
+ws-icon-1 = 2;%{F#F7CD03}
 ws-icon-2 = 3;%{F#4BB1A7}
 ws-icon-3 = 4;%{F#81A1C1}
 ws-icon-4 = 5;%{F#A3BE8C}

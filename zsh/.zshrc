@@ -84,6 +84,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

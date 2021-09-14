@@ -1,4 +1,4 @@
-#####################################################################################################################
+###################################################################################################################
 #####################################################################################################################
 #################                          Start of all the settings                                #################
 #####################################################################################################################
@@ -370,8 +370,9 @@ font pango:Noto Mono Regular 13
 # Workspace 2 text editor related
 #assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
 #assign [class="Xed|xed|Brackets|Atom|Code|Geany"]                                   → 2
-# for_window [class="firefox"] move to workspace 2
-assign [class="firefox"]                                                            → 2
+# for_window [class="google-chrome"] move to workspace 2
+assign [class="Google-chrome"]                                                            → 2
+assign [class="disord"]                                                            → 6
 
 # Workspace 3 Inkscape
 #assign [class="Inkscape"]                                                           → 3
@@ -476,7 +477,7 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-scale ~/wallpapers/sword6.png &
+exec --no-startup-id feh --bg-scale ~/wallpapers/sword4.png &
 
 #Polybar
     
@@ -565,13 +566,13 @@ bindsym --release $mod+Escape exec xkill
 bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;focus
 #qwerty/azerty conflict with w
 bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;focus
-bindsym control+mod1+f exec --no-startup-id firefox;focus
+bindsym control+mod1+f exec --no-startup-id google-chrome;focus
 bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
 bindsym control+mod1+g exec --no-startup-id chromium;focus
 
 #workspace 2 related
 #bindsym $mod+F2 exec --no-startup-id geany;focus
-bindsym $mod+F2 exec --no-startup-id firefox;focus
+bindsym $mod+F2 exec --no-startup-id google-chrome;focus
 
 #workspace 3 related
 bindsym $mod+F3 exec --no-startup-id inkscape;focus
@@ -613,9 +614,11 @@ bindsym control+mod1+s exec --no-startup-id spotify;focus
 #####################################################################################################################
 
 
-bindsym Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-bindsym Control+Print exec --no-startup-id xfce4-screenshooter
-bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
+bindsym Print exec --no-startup-id scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+bindsym Control+Shift+Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+# bindsym Control+Print exec --no-startup-id xfce4-screenshooter
+# bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
 #bindsym shift+Print exec --no-startup-id shutter
 
 

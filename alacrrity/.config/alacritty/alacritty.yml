@@ -63,7 +63,7 @@ schemes:
 
 colors: *tokyo-night
 
-background_opacity: 0.92
+background_opacity: 0.88
 
 font:
   # The normal (roman) font face to use.
