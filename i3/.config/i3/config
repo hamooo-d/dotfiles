@@ -150,7 +150,7 @@ bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 bindsym $mod+F11 exec --no-startup-id rofi -show drun -fullscreen -font "Noto Sans 13"
 
 # start rofi small
-bindsym $mod+F12 exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
 
 
@@ -177,9 +177,6 @@ mode "$mode_system" {
 }
 
 
-# ArcoLinux Logout
-bindsym $mod+Shift+e exec --no-startup-id arcolinux-logout
-bindsym $mod+X exec --no-startup-id arcolinux-logout
 
 
 #####################################################################################################################
@@ -287,7 +284,6 @@ bindsym $mod+f fullscreen toggle
 # qwerty/azerty issue for letter z
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
 
 
 # change focus between tiling / floating windows
@@ -412,7 +408,6 @@ for_window [class="Spotify"] move to workspace 7
 # USER APPLICATIONS TO START AT BOOT
 
 # ArcoLinux Welcome App
-exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -433,9 +428,6 @@ for_window [class="Vivaldi-stable"] focus
 
 #Music
 #exec --no-startup-id spotify
-for_window [class="Spotify"] focus
-
-
 
 # TRAY APPLICATIONS
 
@@ -443,10 +435,10 @@ for_window [class="Spotify"] focus
 # you may see a wheel - hashtag out things you do not want
 
 #Authentication dialog
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Updater
-exec --no-startup-id pamac-tray
+# exec --no-startup-id pamac-tray
 
 # bluetooth
 #exec --no-startup-id blueberry-tray
@@ -455,7 +447,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id nm-applet
 
 # num lock activated
-exec_always --no-startup-id numlockx on
+# exec_always --no-startup-id numlockx on
 
 # dropbox
 #exec --no-startup-id dropbox start
@@ -464,8 +456,8 @@ exec_always --no-startup-id numlockx on
 #exec --no-startup-id insync start
 
 # volume
-#exec --no-startup-id pasystray
-exec --no-startup-id volumeicon
+exec --no-startup-id pa-applet
+# exec --no-startup-id volumeicon
 
 #variety
 #exec --no-startup-id variety
@@ -477,10 +469,9 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-scale ~/wallpapers/sword4.png &
+exec --no-startup-id feh --bg-scale ~/wallpapers/sword7.png &
 
 #Polybar
-    
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Screen layout
@@ -488,15 +479,6 @@ exec_always --no-startup-id ~/.screenlayout/layout.sh
 exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl HDMI-A-0 1.5
 exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl DisplayPort-1 1.5
 
-#####################################################################################################################
-#################                                 system applications                               #################
-#####################################################################################################################
-
-exec --no-startup-id xfce4-power-manager &
-# ommitted next line to get super key to bring up the menu in xfce and avoid error then in i3
-# IF xfsettingsd is activated you can not change themes
-#exec --no-startup-id xfsettingsd &
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #####################################################################################################################
 #################                          applications keyboard shortcuts                          #################
@@ -504,71 +486,15 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #not workspace related
 
-#ArcoLinux Welcome App
-bindsym control+mod1+w exec --no-startup-id arcolinux-welcome-app
-
-#ArcoLinux Tweak Tool
-bindsym control+mod1+e exec --no-startup-id arcolinux-tweak-tool
-
-#conky
-bindsym $mod+c exec --no-startup-id conky-toggle
-bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
-bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
-
 # terminal
-bindsym $mod+Return exec --no-startup-id alacritty;focus
-bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
-bindsym control+mod1+t exec --no-startup-id alacritty; focus
-bindsym control+mod1+Return exec --no-startup-id alacritty; focus
-bindsym control+mod1+KP_Enter exec --no-startup-id alacritty; focus
+bindsym $mod+Return exec --no-startup-id kitty;focus
+bindsym $mod+KP_Enter exec --no-startup-id kitty;focus
+bindsym control+mod1+t exec --no-startup-id kitty; focus
+bindsym control+mod1+Return exec --no-startup-id kitty; focus
+bindsym control+mod1+KP_Enter exec --no-startup-id kitty; focus
 bindsym F12 exec --no-startup-id xfce4-terminal --drop-down; focus
 
-#System monitor
-bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
 
-#settings
-bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
-
-#catfish
-bindsym control+mod1+c exec --no-startup-id catfish;focus
-
-#arcolinux-logout
-bindsym control+mod1+k exec --no-startup-id arcolinux-logout
-bindsym control+mod1+l exec --no-startup-id arcolinux-logout
-
-#rofi theme selector
-bindsym control+mod1+r exec --no-startup-id rofi-theme-selector
-
-#arcolinux conflict
-#bindsym $mod+m exec --no-startup-id pragha;focus
-
-#htop
-#arcolinux conflict
-#bindsym $mod+h exec --no-startup-id htop;focus
-
-#pavucontrol
-#arcolinux conflict
-bindsym control+mod1+u exec --no-startup-id pavucontrol
-
-# start xfce-appfinder
-#arcolinux does not seem to work
-bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-
-#pamac-manager
-bindsym control+mod1+p exec --no-startup-id pamac-manager
-
-#xkill
-bindsym --release $mod+Escape exec xkill
-
-#workspace related
-
-#workspace 1 related
-bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;focus
-#qwerty/azerty conflict with w
-bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;focus
-bindsym control+mod1+f exec --no-startup-id google-chrome;focus
-bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
-bindsym control+mod1+g exec --no-startup-id chromium;focus
 
 #workspace 2 related
 #bindsym $mod+F2 exec --no-startup-id geany;focus
@@ -588,7 +514,7 @@ bindsym control+mod1+i exec --no-startup-id nitrogen;focus
 bindsym $mod+F6 exec --no-startup-id vlc;focus
 
 #workspace 7 related
-bindsym $mod+F7 exec --no-startup-id virtualbox;focus
+bindsym $mod+F7 exec --no-startup-id spotify;focus
 
 #workspace 8 related
 for_window [class="Thunar"] focus
@@ -963,7 +889,7 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 #exec --no-startup-id setxkbmap us
 
 exec_always --no-startup-id setxkbmap -layout us,ar -option grp:alt_shift_toggle
-exec_always --no-startup-id echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+exec_always --no-startup-id echo 0 | tee /sys/module/hid_apple/parameters/fnmode 
 
 #####################################################################################################################
 #################                          unclutter                                                #################
