@@ -1,2 +1,2 @@
 # dotfiles
-![desktop](https://user-images.githubusercontent.com/52778711/115736441-f6bc7d00-a393-11eb-81f4-c62bc993c5b9.png)
+![desktop](https://i.ibb.co/7bhH8D3/2021-10-21-1634792183-screenshot-1919x1080.jpg)
