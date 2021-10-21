@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # More info : https://github.com/jaagr/polybar/wiki
 
 # Install the following applications for polybar and icons in polybar if you are on ArcoLinuxD
@@ -9,21 +8,16 @@
 # Terminate already running bar instances
 killall -q polybar
 
-# Wait until the processes have been shut down
+# Wait until the processes havh been shut down
 while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config &
-  done
-else
-  polybar --reload example &
-fi
-
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload mainbar-i3-extra -c ~/.config/polybar/config &
-  done
-else
-  polybar --reload example &
-fi
+# if type "xrandr"; then
+#   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#     MONITOR=$m polybar --reload mainbar-i3  &
+#   done
+# else
+#   polybar --reload mainbar-i3  &
+# 
+# fi
+polybar -q main &
+polybar -q main-1 &
