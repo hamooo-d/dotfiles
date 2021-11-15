@@ -14,9 +14,9 @@ set $mod Mod4
 
 
 #This is setup for qwerty
-set $up h
+set $up k
 set $down j
-set $left k
+set $left h
 set $right l
 
 #####################################################################################################################
@@ -28,7 +28,7 @@ set $secondMonitor HDMI-A-0
 
 workspace 1 output $firstMonitor
 workspace 2 output $secondMonitor
-workspace 3 output $firstMonitor
+workspace 3 output $secondMonitor
 workspace 4 output $firstMonitor
 workspace 5 output $firstMonitor
 workspace 6 output $secondMonitor
@@ -221,7 +221,7 @@ font pango:Noto Mono Regular 13
 assign [class="Google-chrome"]                                                       → 2
 
 # Workspace 3 Inkscape
-#assign [class="Inkscape"]                                                           → 3
+assign [class="Postman"]                                                             → 3
 
 # Workspace 4 Gimp
 #assign [class="Gimp"]                                                               → 4
@@ -233,7 +233,7 @@ assign [class="Google-chrome"]                                                  
 
 # Workspace 6 all video related software
 #assign [class="Vlc|vlc"]                                                             → 6
-assign [class="disord"]                                                              → 6
+assign [class="discord"]                                                              → 6
 
 # Workspace 7 virtual machines and settings
 #assign [class="Vmplayer|VirtualBox"]						    → 7
@@ -294,7 +294,7 @@ exec --no-startup-id pa-applet
 # #exec --no-startup-id xfce4-clipman
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-scale ~/wallpapers/night.png &
+exec --no-startup-id feh --bg-scale ~/wallpapers/tokyo-night.png &
 
 #Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -324,6 +324,7 @@ bindsym F12 exec --no-startup-id xfce4-terminal --drop-down; focus
 bindsym $mod+F2 exec --no-startup-id google-chrome;focus
 
 #workspace 3 related
+for_window [class="Postman"] focus
 
 #workspace 4 related
 
@@ -358,9 +359,9 @@ bindsym control+mod1+s exec --no-startup-id spotify;focus
 #####################################################################################################################
 
 
-bindsym Print exec --no-startup-id scrot -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+bindsym Print exec --no-startup-id scrot -q 100 -u '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 bindsym Control+Shift+Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-bindsym --release Shift+Print exec --no-startup-id scrot -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+bindsym --release Shift+Print exec --no-startup-id scrot -q 100 -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 
 
 #####################################################################################################################
@@ -540,17 +541,19 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 
 bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
+for_window [class="^.*"] border pixel 0
+
 #####################################################################################################################
 #################                          window appearance                                           #################
 #####################################################################################################################
 
   # class                 border  backgr. text    indicator
-  client.placeholder      #242424 #242424 #242424
-  client.background       #000000 #1a1b26 #1a1b26
-  client.focused          #33467C #33467C #33467C #33467C
-  client.unfocused        #1a1b26 #1a1b26 #1a1b26 #1a1b26
-  client.focused_inactive #222222 #222222 #a9a9a9 #222222
-  client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+  # client.placeholder      #242424 #242424 #242424
+  # client.background       #000000 #1a1b26 #1a1b26
+  # client.focused          #33467C #33467C #33467C #33467C
+  # client.unfocused        #1a1b26 #1a1b26 #1a1b26 #1a1b26
+  # client.focused_inactive #222222 #222222 #a9a9a9 #222222
+  # client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 
 ##STOP THEMING WM
 
