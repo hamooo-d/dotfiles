@@ -224,29 +224,20 @@ assign [class="Google-chrome"]                                                  
 assign [class="Postman"]                                                             → 3
 
 # Workspace 4 Gimp
-#assign [class="Gimp"]                                                               → 4
 
 # Workspace 5 Images and meld
-#assign [class="ristretto|Ristretto|shotwell|Shotwell|Xviewer|Nitrogen"]             → 5
-#assign [class="feh|gthumb|Gthumb|eog|Eog|Pinta|pixeluvo|Pixeluvo"]                  → 5
-#assign [class="Meld"]                                                               → 5
 
 # Workspace 6 all video related software
-#assign [class="Vlc|vlc"]                                                             → 6
 assign [class="discord"]                                                              → 6
 
 # Workspace 7 virtual machines and settings
-#assign [class="Vmplayer|VirtualBox"]						    → 7
 for_window [class="Spotify"] move to workspace 7
 
 # Workspace 8 file managers
-#assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                                 → 8
 
 # Workspace 9 email clients
-#assign [class="Geary|Evolution"]                                                    → 9
 
 # Workspace 10 music related
-# assign [class="Spotify|spotify"]                                                    → 7
 # fix for spotify not moving to workspace 10
 
 
@@ -256,29 +247,10 @@ for_window [class="Spotify"] move to workspace 7
 #################           autostart   -    execute applications at boot time                      #################
 #####################################################################################################################
 
-# USER APPLICATIONS TO START AT BOOT
-
-# ArcoLinux Welcome App
-
-# Term
-# exec_always --no-startup-id kitty
-
 # Autotiling
 exec_always --no-startup-id autotiling
 
-#Music
-# exec --no-startup-id spotify
-
 # TRAY APPLICATIONS
-
-# applications that are not installed will not start
-# you may see a wheel - hashtag out things you do not want
-
-#Authentication dialog
-# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-# Updater
-# exec --no-startup-id pamac-tray
 
 # bluetooth
 #exec --no-startup-id blueberry-tray
@@ -290,19 +262,17 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
 # exec --no-startup-id volumeicon
 
-# clipman
-# #exec --no-startup-id xfce4-clipman
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-scale ~/wallpapers/tokyo-night.png &
+exec --no-startup-id feh --bg-scale ~/wallpapers/street.png &
 
 #Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Screen layout
 exec_always --no-startup-id ~/.screenlayout/layout.sh
-exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl HDMI-A-0 1.5
-exec_always --no-startup-id ~/color-demo-app/cmsaturation.pl DisplayPort-1 1.5
+exec_always --no-startup-id ~/vibrance/cmsaturation.pl HDMI-A-0 1.5
+exec_always --no-startup-id ~/vibrance/cmsaturation.pl DisplayPort-1 1.5
 
 
 #####################################################################################################################
